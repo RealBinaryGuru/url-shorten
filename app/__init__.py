@@ -3,16 +3,15 @@ from config import Config
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap4
 
-
-bootstrap = Bootstrap()  # flask-bootstrap
 
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
-    bootstrap.init_app(app)
+    bootstrap = Bootstrap4(app)  # flask-bootstrap
+
 
     # Register blueprints
     from .main import bp as main_blueprint

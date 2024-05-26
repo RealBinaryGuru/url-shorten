@@ -1,5 +1,5 @@
 from app.main import bp
-
+from flask import render_template
 @bp.route('/', methods=['GET'])
 def index():
-    return 'Hello, World!'
+    return render_template('index.html', title='home')
