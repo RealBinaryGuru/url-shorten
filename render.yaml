@@ -1,0 +1,6 @@
+services:
+- type: web
+  name: url_shortener_webapp
+  runtime: python
+  repo: https://github.com/votanasrey/url_shortener_webapp
+  plan: free
