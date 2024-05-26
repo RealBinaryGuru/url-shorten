@@ -10,8 +10,10 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
-    bootstrap = Bootstrap4(app)  # flask-bootstrap
-
+    Bootstrap4(app)  # flask-bootstrap
+    
+    with app.app_context():
+        app.debug=current_app.config["DEBUG"]
 
     # Register blueprints
     from .main import bp as main_blueprint
