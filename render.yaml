@@ -4,3 +4,7 @@ services:
   runtime: python
   repo: https://github.com/votanasrey/url_shortener_webapp
   plan: free
+  region: singapore
+  buildCommand: pip install -r requirements.txt
+  startCommand: python main.py
+version: "1"
