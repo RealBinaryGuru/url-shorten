@@ -21,7 +21,7 @@ class urlShortener():
         except requests.exceptions.ReadTimeout:
             return "Error: The request timed out. Please try again later."
         except Exception as e:
-            return f"Error: {str(e)}"
+            return "An error occurred creating the short URL"
         
     def get_original_url(self, short_url):
         return self.url_mapping.get(short_url)

@@ -14,7 +14,7 @@ def index():
         original_url = request.form.get("original_url")
         if original_url:
             short_url = url_shortener.convert_long_to_short_url(original_url)
-            flash(f'Short URL created: {url_for("main.redirect_to_url", short_url=short_url, _external=True)}')
+            flash(f'SHORT URL CREATED : {url_for("main.redirect_to_url", short_url=short_url, _external=False)}')
         else:
             flash("Please enter a valid URL.")
     return render_template("index.html")
