@@ -38,3 +38,7 @@ h2 {
 .alert-info p {
     margin: 0;
 }
+
+.long-url {
+    margin-top: 10px; 
+}
