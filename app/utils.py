@@ -1,12 +1,7 @@
-import pandas as pd 
-import numpy as np 
 import requests 
-import os 
 from dotenv import load_dotenv
 load_dotenv(override=True)
 import pyshorteners
-import string 
-import random 
 
 class urlShortener(): 
     def __init__(self): 

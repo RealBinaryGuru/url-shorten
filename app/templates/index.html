@@ -1,52 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short URL</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h2 class="text-center mb-4">Short URL</h2>
-                        <form method="post" action="{{ url_for('main.index') }}">
-                            <div class="form-group">
-                                <label for="original_url">Paste the URL to be shortened</label>
-                                <input type="text" class="form-control" id="original_url" name="original_url" placeholder="Enter the link here" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">Shorten URL</button>
-                        </form>
-                        {% if short_url %}
-                            <div class="alert alert-success mt-4">
-                                Short URL CREATED : <a href="{{ url_for('main.redirect_to_url', short_url=short_url, _external=True) }}" target="_blank">{{ url_for('main.redirect_to_url', short_url=short_url, _external=False) }}</a>
-                            </div>
-                        {% endif %}
-                        {% with messages = get_flashed_messages() %}
-                            {% if messages %}
-                                <div class="alert alert-info mt-4">
-                                    {% for message in messages %}
-                                        <p>{{ message }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        {% endwith %}
-                    </div>
-                </div>
-                <p class="text-center mt-3">
-                    ShortURL is a free tool to shorten URLs and generate short links. URL shortener allows to create a shortened link making it easy to share.
-                </p>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-8 text-center">
-                <p class="copyright">© 2024 Tech Fighters. All rights reserved.</p>
-            </div>
-        </div>
+{% extends "base.html" %}
+{% block content %}
+<div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+    <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 py-4">
+        <nav class="flex flex-1 flex-col">
+
+        </nav>
+
     </div>
-</body>
-</html>
+</div>
+
+{% endblock content %}
