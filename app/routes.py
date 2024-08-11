@@ -31,7 +31,6 @@ def shorten_url():
     original_url = data.get("url")
     if validate_url(original_url):
         short_url = url_shortener.shorten(original_url)
-        print('Short URL:', short_url)
         return jsonify({'short_url': short_url}), 200
     else:
         return jsonify({'error': 'Invalid URL'}), 400

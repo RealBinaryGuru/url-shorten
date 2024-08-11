@@ -22,13 +22,3 @@ class URLShortener:
             return url
         return ''
 
-url_shortener = URLShortener()
-
-# Use the shorten method to generate a short code for the URL
-url = "https://www.youtube.com/watch?v=pPBH2bB1FgI&list=RDauHVlqDIcpA&index=11"
-short_code = url_shortener.shorten(url)
-print(f"Short code: {short_code}")
-
-# Use the expand method to get the original URL from the short code
-original_url = url_shortener.expand(short_code)
-print(f"Original URL: {original_url}")
